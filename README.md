@@ -28,4 +28,4 @@ The route will return an object that looks like this:
 ```
 The first ten celebrities on the page will be listed.
 
-There is also an optional param {get_all: bool} that defaults to false. If it is given `true`, it will return all of the actors for the given date. Warning!! This is take a long time!
+There is also an optional param `{get_all: bool}` that defaults to false. If it is given `true`, it will return all of the actors for the given date. Warning!! This is take a long time!
