@@ -2,7 +2,7 @@
 
 This small app was built to handle one POST request to /celeb_birthdays
 
-The POST request needs to have two parameters: {month: int, date: int}
+The POST request needs to have two parameters: `{month: int, date: int}`
 
 The months start at 1 (January) and go to 12.  The date starts at 1 and goes to the end of the given month.
 
