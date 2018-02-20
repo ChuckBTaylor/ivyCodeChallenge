@@ -33,7 +33,6 @@ class Celeb < ApplicationRecord
         else
           next_page_url = nil
         end
-        puts next_page_url
       end
 
     else
@@ -60,7 +59,7 @@ class Celeb < ApplicationRecord
 
   def self.actor_info(actor)
     {
-      name: Celeb.celeb_name(actor),
+      name: celeb_name(actor),
       photoUrl: photo_url(actor),
       profileUrl: profile_url(actor),
       mostKnownWork: most_known_work_info(actor)
@@ -85,13 +84,18 @@ class Celeb < ApplicationRecord
 
   def self.most_known_work_info(actor)
     work = actor.css('.text-muted.text-small').children.css('a')
-    work_info = get_work_info(work)
-    {
-      title: most_known_work_title(work),
-      url: most_known_work_url(work),
-      rating: work_rating(work_info),
-      director: work_director(work_info)
-    }
+    if work.length != 0
+      work_url = most_known_work_url(work)
+      work_info = get_work_info(work)
+      {
+        title: most_known_work_title(work),
+        url: work_url,
+        rating: work_rating(work_info),
+        director: work_director(work_info)
+      }
+    else
+      nil
+    end
   end
 
   def self.most_known_work_title(work)
