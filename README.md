@@ -8,6 +8,7 @@ The months start at 1 (January) and go to 12.  The date starts at 1 and goes to 
 
 The route will return an object that looks like this:
 
+```
 {
   people: [
     {
@@ -24,3 +25,4 @@ The route will return an object that looks like this:
     ...
   ]
 }
+```
